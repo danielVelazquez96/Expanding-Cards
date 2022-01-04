@@ -80,38 +80,48 @@ const removeActiveClasses=()=>{
 
 // Subject seccion
 
-theWitcher.addEventListener('click',()=>{
-    panels.forEach((panel,index)=>{
-        panel.style.backgroundImage=`url('${TheWitcherSources[index]}')`;
-        panel.firstElementChild.innerHTML=TheWitcherTitles[index];
-        if(index!=1){
-            panel.firstElementChild.style='color: white;';
-        }else{
-            panel.firstElementChild.style='color: black;';
-        }
-        
-    })
+theWitcher.addEventListener('click',(event)=>{
+
+    if(event.target.localName==`img`){
+        panels.forEach((panel,index)=>{
+            panel.style.backgroundImage=`url('${TheWitcherSources[index]}')`;
+            panel.firstElementChild.innerHTML=TheWitcherTitles[index];
+            if(index!=1){
+                panel.firstElementChild.style='color: white;';
+            }else{
+                panel.firstElementChild.style='color: black;';
+            }
+            
+        })
+    }
+    
 })
 
-onePiece.addEventListener('click',()=>{
-    panels.forEach((panel,index)=>{
-        panel.style.backgroundImage=`url('${onePieceSources[index]}')`;
-        panel.firstElementChild.innerHTML=onePieceTitles[index];
-        panel.firstElementChild.style='color: black;'
-    })
-})
-
-demonsSlayer.addEventListener('click',()=>{
-    panels.forEach((panel,index)=>{
-        panel.style.backgroundImage=`url('${demonsSlayerSources[index]}')`;
-        panel.firstElementChild.innerHTML=demonsSlayerTitles[index];
-        if(index!=5 && index!=4){
+onePiece.addEventListener('click',(event)=>{
+    console.log(event.target.localName)
+    if(event.target.localName==`img`){
+        panels.forEach((panel,index)=>{
+            panel.style.backgroundImage=`url('${onePieceSources[index]}')`;
+            panel.firstElementChild.innerHTML=onePieceTitles[index];
             panel.firstElementChild.style='color: black;'
-        }else{
-            panel.firstElementChild.style='color: white;'
-        }
-        
-    })
+        })
+    }
+})
+
+demonsSlayer.addEventListener('click',(event)=>{
+
+    if(event.target.localName==`img`){
+        panels.forEach((panel,index)=>{
+            panel.style.backgroundImage=`url('${demonsSlayerSources[index]}')`;
+            panel.firstElementChild.innerHTML=demonsSlayerTitles[index];
+            if(index!=5 && index!=4){
+                panel.firstElementChild.style='color: black;'
+            }else{
+                panel.firstElementChild.style='color: white;'
+            }
+            
+        })
+    }
 })
 
 
