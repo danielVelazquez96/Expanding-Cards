@@ -16,6 +16,8 @@ body{
     overflow: hidden;
     margin: 0;
     /* background-image: radial-gradient(circle, #e90303, #ea3c30, #e75a50, #e1736d, #d68a88, #cf8987, #c98785, #c28684, #c06d68, #ba524b, #b1362d, #a60d0d); */
+
+    caret-color: transparent;
     
 }
 
