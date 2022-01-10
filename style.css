@@ -54,7 +54,7 @@ body{
 }
 
 .subjects .subject img:active{
-    transform: translate(5px,5px);
+    transform: scale(.9);
 }
 
 
